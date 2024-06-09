@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './page.module.css'
 import ImagePicker from '@/components/meals/ImagePicker'
 import { handleSubmit } from '@/lib/actions'
+import MealsFormButton from '@/components/meals/MealsFormButton'
 
 const MealSharePage = () => {
     return (
@@ -54,7 +55,7 @@ const MealSharePage = () => {
                     </p>
                     <ImagePicker label='Your Image' name='image' />
                     <p className={styles.actions}>
-                        <button type='submit'>Share Meal</button>
+                        <MealsFormButton />
                     </p>
                 </form>
             </main>
