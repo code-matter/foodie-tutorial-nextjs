@@ -2,9 +2,12 @@ import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import { getMeal } from "@/lib/meals";
+import { notFound } from "next/navigation";
 
 const MealIDPage = async ({ params }) => {
   const meal = await getMeal(params.mealId);
+
+  if (!meal) notFound();
 
   return (
     <>
