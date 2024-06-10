@@ -1,12 +1,13 @@
-import Link from "next/link";
-import React from "react";
+/* eslint-disable react/no-unescaped-entities */
+import Link from 'next/link'
+import React from 'react'
 
 const NotFound = () => {
-  return (
-    <main className="not-found">
-      <h1>The page you are longer for doesn't exist..</h1>
-    </main>
-  );
-};
+    return (
+        <main className='not-found'>
+            <h1>The page you are longer for doesn't exist..</h1>
+        </main>
+    )
+}
 
-export default NotFound;
+export default NotFound
