@@ -4,6 +4,17 @@ import Image from 'next/image'
 import { getMeal } from '@/lib/meals'
 import { notFound } from 'next/navigation'
 
+export const generateMetadata = async ({ params }) => {
+    const meal = await getMeal(params.mealId)
+    if (!meal) {
+        notFound()
+    }
+    return {
+        title: meal.title,
+        description: meal.summary,
+    }
+}
+
 const MealIDPage = async ({ params }) => {
     const meal = await getMeal(params.mealId)
 
@@ -15,8 +26,7 @@ const MealIDPage = async ({ params }) => {
                 <div className={styles.image}>
                     <Image
                         fill
-                        src={`https://foodies-app-alex-dev-prog
-.s3.amazonaws.com/${meal.image}`}
+                        src={`https://foodies-app-alex-dev-prog.s3.amazonaws.com/${meal.image}`}
                         alt={meal.title}
                     />
                 </div>
